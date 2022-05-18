@@ -2,7 +2,12 @@ import React from 'react'
 
 const Inicio = () => {
   return (
-    <div>Inicio hola</div>
+    <div>
+      
+      <h1 style={{color: "red"}}>Hello Style!</h1>
+
+
+    </div>
   )
 }
 

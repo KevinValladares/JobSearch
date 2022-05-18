@@ -1,14 +1,49 @@
-import React from 'react'
-import '../Style/Login.css'
+import React, { useContext, useRef } from 'react'
+import { authContext } from '../Context/authContext'
 import { useNavigate } from 'react-router-dom'
-
+import '../Style/Login.css'
 
 const Login = () => {
-
+  const context = useContext(authContext)
+  const email = useRef()
+  const password = useRef()
   const historial = useNavigate()
+
+
   const SentToCreateAccount = () => {
+
     { historial('/CreateAccount') }
   }
+
+  const StartLogin = (event) => {
+    event.preventDefault()
+
+    console.log(email.current.value, password.current.value);
+
+    fetch("https://backendnodejstzuzulcode.uw.r.appspot.com/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email.current.value,
+        password: password.current.value
+      })
+    }).then(res => res.json())
+      .then(data => {
+        localStorage.setItem("token", data.token)
+        context.setAuth({
+          id: data.user.id,
+          name: data.user.name,
+          logged: true
+        })
+
+        { historial('/') }
+      })
+      .catch(error => console.log(error))
+
+  }
+
 
 
   return (
@@ -19,16 +54,20 @@ const Login = () => {
 
         {/*<img src="./assets/Platzi_Logos/logo_yard_sale.svg" alt="logo" className='logo' />  */}
 
-        <form action='#' className='form'>
+        <form onSubmit={StartLogin} className='form'>
 
           <label className="label">Email address</label>
-          <input type="email"
+          <input
+            ref={email}
+            type="email"
             id="email"
             placeholder="********"
             className="input input-email" />
 
           <label className="label">Password</label>
-          <input type="password"
+          <input
+            ref={password}
+            type="password"
             id="password"
             placeholder="********"
             className="input input-password" />

@@ -23,7 +23,7 @@ body {
 .login{
 
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: grid;
     place-items: center;
 }
@@ -33,14 +33,6 @@ body {
     grid-template-rows: auto 1fr auto;
     width: 300px;
 }
-
-.logo {
-    width: 150px;
-    margin-bottom: 50px;
-    justify-self: center;
-    display: none;
-}
-
 
 .form {
     display: flex;
@@ -61,7 +53,7 @@ body {
     font-size: var(--sm);
     font-weight: bold;
     margin-bottom: 4px;
-margin-top: 25px;
+    margin-top: 25px;
 }
 
 .input {
@@ -71,7 +63,7 @@ margin-top: 25px;
     border-radius: 10px;
     height: 30px;
     padding: 5px;
-    margin-bottom: 12px;
+    margin-bottom: 22px;
 }
 
 .input-email{
@@ -92,8 +84,8 @@ margin-top: 25px;
 }
 
 .login-button {
-    margin-top: 14px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -119,11 +111,14 @@ margin-top: 25px;
 
     }
 
+
     .secundary-button {
         width:inherit;
         position: absolute;
+        z-index: -1;
         bottom: 25px;
 
     }
+    
 }
 

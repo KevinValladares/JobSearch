@@ -1,9 +1,9 @@
 import React from 'react'
-import '../Style/createAccount.css'
+import '../Style/CreateAccount.css'
 const CreateAccount = () => {
   return (
    
-<div className="login">
+<div className="Sign-Login">
 
 <div className="form-container">
 
@@ -11,7 +11,7 @@ const CreateAccount = () => {
     <h1 className="title">My account</h1>
 
 
-    <form action="/" className="form">
+    <form action="/" className="formSign">
 
         <div>
 
@@ -29,7 +29,7 @@ const CreateAccount = () => {
         <input 
         type="submit" 
         value="Create" 
-        className="primary-button login-button"/>
+        className="primary-button Sign-button"/>
 
     </form>
 

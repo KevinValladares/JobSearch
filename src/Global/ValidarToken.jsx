@@ -1,21 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Inicio from "./Components/Inicio";
-import Menu from "./Components/Menu";
-import Login from "./Components/Login"
-import CreateAccount from "./Components/CreateAccount";
-import { ValidarToken } from './Global/ValidarToken'
 import { useContext, useEffect } from 'react';
-import { authContext } from './Context/authContext'
+import { authContext } from '../Context/authContext'
 
-function App() {
+export const ValidarToken = () => {
 
   const context = useContext(authContext)
 
 
-
   useEffect(() => {
 
+console.log('Usefect');
 
     const token = localStorage.getItem("token")
 
@@ -49,26 +42,4 @@ function App() {
   }, [])
 
 
-
-
-
-  return (
-
-    <div>
-      <Router>
-        <Menu />
-
-
-        <Routes>
-          <Route>
-            <Route exact path="/" element={<Inicio />} />
-            <Route exact path="/Login" element={<Login />} />
-            <Route exact path="/CreateAccount" element={<CreateAccount />} />
-          </Route>
-        </Routes>
-      </Router>
-    </div>
-  );
 }
-
-export default App;
