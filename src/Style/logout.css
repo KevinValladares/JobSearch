@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+
+
+.btnLogout{
+
+    background: red;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    border-style:  none;
+    border-radius: 6px;
+
+}

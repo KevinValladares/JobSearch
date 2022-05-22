@@ -5,24 +5,24 @@ import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.nav`
   width: 100%;
-  height: ${(props) => (props.extendNavbar ? "100vh" : "50px")};
-  background-color: black;
+  height: ${(props) => (props.extendNavbar ? "100vh" : "8%")};
+  background-color: #232830;
   display: flex;
   flex-direction: column;
-  @media (min-width: 700px) {
-    height: 50px;
+  @media (min-width: 780px) {
+    height: 8%;
   }
 `;
 
 export const NavbarInnerContainer = styled.div`
   width: 100%;
-  height: 50px;
   display: flex;
+  height: 100%;
 `;
 
 
 export const LeftContainer = styled.div`
-  flex: 30%;
+  flex: 20%;
   display: flex;
   justify-content: flex-start;
   padding-right: 50px;
@@ -32,17 +32,15 @@ export const LeftContainer = styled.div`
 export const RightContainer = styled.div`
 
 
-  flex: 70%;
+  flex: 62%;
   display: flex;
   align-items: center;
   justify-content:  flex-start;
   padding-left: 5%;
 
-@media (max-width: 700px) {
+@media (max-width: 780px) {
   justify-content:  flex-end;
 }
-
-
 
 `;
 
@@ -53,24 +51,31 @@ export const NavbarLinkContainer = styled.div`
 `;
 
 export const NavbarLink = styled(Link)`
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+
   color: white;
   font-size: x-large;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-decoration: none;
   position: relative;
   margin: 10px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 780px) {
     display: none;
   }
 
 
 `;
 
+
+
 export const NavbarLinkExtended = styled(Link)`
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+
   color: white;
   font-size: x-large;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-decoration: none;
   margin: 10px;
 `;
@@ -89,7 +94,7 @@ export const OpenLinksButton = styled.button`
   color: white;
   font-size: 45px;
   cursor: pointer;
-  @media (min-width: 700px) {
+  @media (min-width: 780px) {
     display: none;
   }
 `;
@@ -98,8 +103,47 @@ export const NavbarExtendedContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (min-width: 700px) {
+  @media (min-width: 780px) {
     display: none;
   }
 `;
+
+export const NombreUsuario = styled.div`
+  flex: 18%;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: flex-start;
+
+&>span{
+
+  font-size: 18px;
+  margin-right:15px;
+}
+
+@media (max-width: 780px) {
+    display: none;
+  }
+
+`;
+
+
+
+
+export const NombreUsuarioExtender = styled.div`
+  flex: 20%;
+  display: flex;
+  flex-direction:column;
+  color: white;
+  align-items: center;
+  justify-content: flex-start;
+
+&>span{
+  font-size: x-large;
+  margin: 15px;
+  
+}
+
+`;
+
 

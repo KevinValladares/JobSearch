@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
 
-
 :root {
 
     --very-light-pink: #C7C7C7;
@@ -20,48 +19,61 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-.Sign-Login {
+
+.Offer {
 
     width: 100%;
     height: 92%;
     display: grid;
     place-items: center;
+  
+
 }
 
-.form-container {
+.form-containerOffert {
+    margin: 10px 25px;
     display: grid;
-    grid-template-rows: auto 1fr auto;
     width: 450px;
-    height: auto;
-}
-
-.title {
-   
-    font-size: var(--lg);
-    margin-bottom: 5px;
-    text-align: start;
-}
-
-.formSign {
-    display: flex;
-    flex-direction: column;
     height: 100%;
- 
-
 }
 
-.formSign div {
+.formOffer {
     display: flex;
     flex-direction: column;
 }
 
-.labelSign {
+
+.formOffer .login-button {
+    width: 100%;
+}
+
+
+.user-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.user-details .inputbox {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.labelOffer {
     font-size: var(--sm);
     font-weight: bold;
+    margin-bottom: 4px;
     margin-top: 10px;
-    margin-bottom: 10px;
 
 }
+
+.labeltitulo{
+    margin-top: 27px;
+}
+
 
 .input {
     background-color: var(--text-input-field);
@@ -70,25 +82,15 @@ body {
     border-radius: 10px;
     height: 30px;
     padding: 5px;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
-.input-name,
-.input-email,
-.input-password,
-.input-select {
+
+
+.input-descripcion {
+    resize: none;
+    height: 70px;
     margin-bottom: 5px;
-}
-
-
-.input-select{
-    background-color: var(--text-input-field);
-    font-size: var(--md);
-    border: none;
-    border-radius: 10px;
-    padding: 5px;
-    margin-bottom: 8px;
-    height: 40px;
 }
 
 
@@ -105,28 +107,15 @@ body {
     cursor: pointer;
 }
 
-.alert{
-line-height: 40px;
-height: 40px;
-background: pink;
-color: red;
-text-align: center;
-border-radius: 2px;
-
-
-}
-
-
-.Sign-button {
-    margin-top: 14px;
-    margin-bottom: 20px;
-}
 
 @media (max-width:640px) {
 
-    .form-container{
+    .form-container {
         width: 300px;
     }
-    
+
+    .user-details {
+        display: block;
+    }
 
 }

@@ -1,60 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Inicio from "./Components/Inicio";
+import Inicio from "./Pages/Inicio";
 import Menu from "./Components/Menu";
-import Login from "./Components/Login"
-import CreateAccount from "./Components/CreateAccount";
-import { ValidarToken } from './Global/ValidarToken'
+import Login from "./Pages/Login"
+import CreateAccount from "./Pages/CreateAccount";
 import { useContext, useEffect } from 'react';
 import { authContext } from './Context/authContext'
+import { postWithToken } from "./API/Conexion";
+import CreateOffers from './Pages/CreateOffers'
+import VerOfertas from './Pages/VerOfertas'
+import MyAplicaciones from './Pages/MyAplicaciones'
+import PostularOfertas from './Pages/PostularOfertas'
+
 
 function App() {
 
+  const [error,setError] = useState('')
   const context = useContext(authContext)
+
+  const ValidarSesion = async () => {
+
+try {
+
+  const respuesta = await postWithToken("/api/auth/validate")
+    const data = await respuesta.data
+    const {user } = await respuesta.data
+
+    if (data.failed) {
+      console.log(data)
+    }
+    else {
+      context.setAuth({
+        id: user.id,
+        name: user.name,
+        email:user.email,
+        role:user.role,
+        logged: true
+      })
+    }
+  
+} catch (error) {
+  console.log(error.response.data)
+  setError(error.response.data.message)
+}
+
+
+
+
+  }
 
 
 
   useEffect(() => {
 
+    ValidarSesion();
 
-    const token = localStorage.getItem("token")
-
-    if (token) {
-
-
-      fetch("https://backendnodejstzuzulcode.uw.r.appspot.com/api/auth/validate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer " + token
-        },
-      })
-        .then(res => res.json())
-        .then(data => {
-          if (data.failed) {
-            console.log(data)
-          } else {
-            context.setAuth({
-              id: data.user.id,
-              name: data.user.name,
-              logged: true
-            })
-          }
-
-        })
-        .catch(error => console.log(error))
-    } else {
-      console.log('No hay token')
-    }
   }, [])
-
-
-
 
 
   return (
 
-    <div>
+    <div className="App">
       <Router>
         <Menu />
 
@@ -64,6 +70,10 @@ function App() {
             <Route exact path="/" element={<Inicio />} />
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/CreateAccount" element={<CreateAccount />} />
+            <Route exact path="/CreateOffers" element={<CreateOffers/>} />
+            <Route exact path="/VerOfertas" element={<VerOfertas/>} />
+            <Route exact path="/MyAplicaciones" element={<MyAplicaciones/>} />
+            <Route exact path="/PostularOfertas" element={<PostularOfertas/>} />
           </Route>
         </Routes>
       </Router>
