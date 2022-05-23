@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { postWithToken } from '../API/Conexion'
+import OfferInfo from '../Components/OfferInfo'
+import '../Style/VerOferta.css'
 
 const VerOfertas = () => {
 
@@ -14,6 +16,7 @@ const VerOfertas = () => {
       const respuesta = await postWithToken("/api/jobs/employer")
 
       setOfertas(respuesta.data);
+     
     } catch (error) {
 
       console.log(error.response.data)
@@ -31,25 +34,17 @@ const VerOfertas = () => {
 
   return (
 
-
-    <div>
-
+    <div className="OffertDetail">
       {
-        ofertas.map((item) =>
-
-          <ul>
-            <li key={item.id}>
-              {item.title}
-
-            </li>
-          </ul>
-
-
-
-
+        ofertas.map((oferta) => (
+          
+          <OfferInfo offert={oferta} key={oferta._id} />
+        )
         )
       }
+
     </div>
+
   )
 }
 

@@ -17,7 +17,7 @@ export const NavbarContainer = styled.nav`
 export const NavbarInnerContainer = styled.div`
   width: 100%;
   display: flex;
-  height: 100%;
+  height: 80px;
 `;
 
 
@@ -61,10 +61,15 @@ export const NavbarLink = styled(Link)`
   position: relative;
   margin: 10px;
 
+&:hover{
+
+  color:gold;
+}
+
+
   @media (max-width: 780px) {
     display: none;
   }
-
 
 `;
 
@@ -103,6 +108,7 @@ export const NavbarExtendedContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   @media (min-width: 780px) {
     display: none;
   }
@@ -113,7 +119,7 @@ export const NombreUsuario = styled.div`
   display: flex;
   color: white;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
 
 &>span{
 
@@ -143,6 +149,11 @@ export const NombreUsuarioExtender = styled.div`
   margin: 15px;
   
 }
+
+@media (max-width: 780px) {
+   width:100%
+  }
+
 
 `;
 

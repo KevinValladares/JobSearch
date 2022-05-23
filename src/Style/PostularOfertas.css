@@ -1,0 +1,88 @@
+@import './global.css';
+
+.ContainerPostular {
+
+    width: 100%;
+    height: 92%;
+}
+
+.panelFiltro{
+    background: lightgrey;
+    width: 100%;
+    height: 50px;
+    display: flex;
+   
+}
+
+
+.labelFiltro {
+    font-size: var(--sm);
+    font-weight: bold;
+   margin: 10px 5px 0px 5px;
+}
+
+.FiltroCategoria {
+    background-color: var(--text-input-field);
+    font-size: var(--md);
+    border: none;
+    border-radius: 10px;
+    width: 160px;
+    height: 19px;
+    padding: 5px;
+    margin-bottom: 22px;
+    margin: 10px 5px 0px  5px;
+}
+
+.inputFiltro{
+    background-color: var(--text-input-field);
+    font-size: var(--md);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 8px;
+    height: 30px;
+    margin: 10px 5px 0px 5px;
+    
+}
+
+
+.btnPrimario {
+
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    font-size: var(--md);
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    margin: 10px 5px 0px 5px;
+}
+
+
+.ContainerOfertasList{
+    display: grid;
+	grid-template-columns: repeat(auto-fill, 400px);
+	gap: 26px;
+	place-content: center;
+	margin: 10px 0 0 0;
+   
+
+}
+
+@media (max-width:640px) {
+
+    .panelFiltro{
+          
+        height: 85px;
+        display: flex;
+       
+    }
+
+    .btnSinlfiltro{
+        width: 160px;
+        margin-top: 49px;
+    }
+
+}

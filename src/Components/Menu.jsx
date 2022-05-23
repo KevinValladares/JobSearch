@@ -35,11 +35,11 @@ const Menu = () => {
                         <NavbarLink to='/'>Inicio</NavbarLink>
                         {!context.auth.logged && <NavbarLink to='/Login'>Login</NavbarLink>}
                         {context.auth.role === 'employer' ?
-                            <NavbarLink to='/CreateOffers'>Crear Oferta</NavbarLink> : null}
+                            <NavbarLink to='/CreateOffers'>Crear Ofertas</NavbarLink> : null}
                         {context.auth.role === 'employer' ?
                             <NavbarLink to='/VerOfertas'>Mis Ofertas</NavbarLink> : null}
                         {context.auth.role === 'applicant' ?
-                            <NavbarLink to='/PostularOfertas'>Ofertas Trabajo</NavbarLink> : null}
+                            <NavbarLink to='/PostularOfertas'>Ver Ofertas</NavbarLink> : null}
                         {context.auth.role === 'applicant' ?
                             <NavbarLink to='/MyAplicaciones'>Mis Aplicaciones</NavbarLink> : null}
 
@@ -67,11 +67,11 @@ const Menu = () => {
                     <NavbarLinkExtended onClick={handleClickLink} to='/'>Inicio</NavbarLinkExtended>
                     {!context.auth.logged && <NavbarLinkExtended onClick={handleClickLink} to='/Login'>Login</NavbarLinkExtended>}
                     {context.auth.role === 'employer' ?
-                        <NavbarLinkExtended onClick={handleClickLink} to='/Login'>Crear Oferta</NavbarLinkExtended> : null}
+                        <NavbarLinkExtended onClick={handleClickLink} to='/Login'>Crear Ofertas</NavbarLinkExtended> : null}
                     {context.auth.role === 'employer' ?
                         <NavbarLinkExtended onClick={handleClickLink} to='/VerOfertas'>Mis Ofertas</NavbarLinkExtended> : null}
                     {context.auth.role === 'applicant' ?
-                        <NavbarLinkExtended onClick={handleClickLink} to='/PostularOfertas'>Ofertas Trabajo</NavbarLinkExtended> : null}
+                        <NavbarLinkExtended onClick={handleClickLink} to='/PostularOfertas'>Ver Ofertas</NavbarLinkExtended> : null}
                     {context.auth.role === 'applicant' ?
                         <NavbarLinkExtended onClick={handleClickLink} to='/MyAplicaciones'>Mis Aplicaciones</NavbarLinkExtended> : null}
 

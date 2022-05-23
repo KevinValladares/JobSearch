@@ -1,0 +1,123 @@
+@import './global.css';
+
+.ProductItem {
+   
+	width: 400px;
+    margin: 10px 0px 35px 0px;
+    border: 1px solid var(--very-light-pink) ;
+    border-radius: 8px;
+   
+}
+
+
+.product-info {
+   
+	display: flex;
+    flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin: 5px 5px 5px 5px;
+}
+.titleOffert{
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid var(--very-light-pink);
+	text-align: center;
+	justify-items: center;
+}
+
+.titleOffert span{
+    width: 100%;
+    text-align: left;
+	font-size: var(--md);
+	font-weight: bold;
+	margin: 5px 5px 10px 5px;
+    
+}
+
+.ContainerInfoOffert{
+	width: 100%;
+}
+
+
+.product-info div p {
+	font-size: var(--sm);
+	margin-top: 0;
+	margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.product-info p span:nth-child(1) {
+	margin-top: 5px;
+	font-size: var(--md);
+	font-weight: bold;
+    color: var(--very-light-pink);
+	
+}
+.product-info p span:nth-child(2) {
+	font-size: var(--sm);
+	margin: 5px 0px 5px 0px;
+
+}
+
+.listadoCategoria{
+	width: 100%;
+	margin-top: 5px;
+	list-style: none;
+	display: flex;
+		
+}
+.listadoCategoria li{
+	margin-left: 10px;
+}
+
+.listadoCategoria li:first-child {
+	margin-left: 0px;
+}
+
+
+.containerLocation{
+	display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+	
+}
+
+
+.offerDescripcion span{
+    font-size: var(--md);
+	font-weight: bold;
+    color: var(--very-light-pink); 
+	
+}
+
+.offerDescripcion p{
+	text-align: justify;
+}
+
+
+.ContainerAplicantes{
+	margin-top: 10px;
+}
+
+.ContainerAplicantes span{
+	font-size: var(--md);
+	font-weight: bold;
+    color: var(--very-light-pink); 
+	margin-top: 5px;
+}
+
+.ContainerAplicantes div{
+	margin-top: 5px;
+}
+
+
+@media (max-width: 640px) {
+
+	.ProductItem {
+	
+		grid-template-columns: repeat(auto-fill, 300px);
+	}
+}

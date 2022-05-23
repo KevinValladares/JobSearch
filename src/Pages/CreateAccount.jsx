@@ -50,6 +50,8 @@ const CreateAccount = () => {
       role: role.current.value
     })
     const { error, user, token } = await respuesta.data
+
+    { historial('/')}
     if (error) {
       console.log(error)
     } else {
@@ -63,7 +65,7 @@ const CreateAccount = () => {
       })
     }
 
-    //{ historial('/Login') }
+    
 
   }
 

@@ -15,13 +15,7 @@ const CreateOffers = () => {
     const salario = useRef(1)
     const [error, setError] = useState('')
 
-    const formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-
-    })
+ 
 
 
     const Validar = (e) => {
